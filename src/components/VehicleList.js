@@ -35,7 +35,7 @@ export default
       if (vehicles && vehicles.length > 0) {
         vehicles.forEach(vehicle => {
           promises.push(this.getVehicleDetails(vehicle.id))
-        })
+        });
 
         Promise.all(promises)
         .then(vehiclesDetails => {
@@ -60,13 +60,15 @@ export default
   render() {
     if (this.state.vehiclesList) {
       return (
-        <div className="">
-          {this.state.vehiclesList.length > 0 ?
-            this.state.vehiclesList.map((vehicle, index) =>
-              <VehicleCard vehicle={vehicle} key={index} />
-            )
-            : "No vehicles found."
-          }
+        <div className="container">
+          <div className="vehicle-list">
+            {this.state.vehiclesList.length > 0 ?
+              this.state.vehiclesList.map((vehicle, index) =>
+                <VehicleCard vehicle={vehicle} key={index} />
+              )
+              : "No vehicles found."
+            }
+          </div>
         </div>
       )
     }

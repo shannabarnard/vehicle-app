@@ -1,0 +1,69 @@
+.vehicle-list {
+    @media (min-width: $break-sm) { 
+        display: flex;
+    }
+    @media (min-width: $break-sm) and (max-width: $break-md) { 
+        flex-direction: column;
+    }
+
+    .vehicle-card {
+        background-color: white;
+        flex-direction: column;
+        @media (min-width: $break-sm) { 
+            width: 100%;
+            border-right: 1px solid $border-color;
+        }
+        @media (min-width: $break-sm) and (max-width: $break-md) { 
+            display: flex;
+            flex-direction: row;
+            border-bottom: 1px solid $border-color;
+        }
+
+        &--image {
+            @media (min-width: $break-sm) and (max-width: $break-md) { 
+                width: 40%;
+            }
+        }
+
+        &--body {
+            padding: 1rem;
+            @media (min-width: $break-lg) { 
+                text-align: center;
+            }
+
+            .title {
+                position: relative;
+                font-family: 'Zilla Slab', serif;
+                text-transform: uppercase;
+                font-size: 1.6rem;
+                margin-bottom: 1rem;
+                @media (min-width: $break-lg) { 
+                    &:before,
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        left: 20%;
+                        width: 60%;
+                        height: 1px;
+                        background-color: $base-font-color;
+                    }
+                    &:before {
+                        top: 0;
+                    }
+                    &:after {
+                        bottom: 0;
+                    }
+                }
+            }
+
+            .price {
+                font-size: .85rem;
+            }
+
+            .description {
+                color: $base-font-muted;
+                margin-bottom: 1rem;
+            }
+        }
+    }
+}
