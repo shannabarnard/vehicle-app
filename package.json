@@ -31,7 +31,7 @@
     "gulp-mocha": "^2.2.0",
     "gulp-sass": "^2.3.2",
     "hbs": "^4.0.0",
-    "jsdom": "^10.1.0",
+    "jsdom": "^16.5.0",
     "react": "^15.3.0",
     "react-dom": "^15.3.0",
     "vinyl-source-stream": "^1.1.0"
